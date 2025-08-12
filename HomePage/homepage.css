@@ -1,0 +1,148 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+}
+/* Banner */
+.banner-principal {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.banner-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.btn-inscricao {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    background: #f0b429;
+    border: none;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Coluna de imagens pequenas */
+.imagens-laterais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui igualmente */
+    height: 500px; /* Mesma altura do banner */
+}
+
+.imagens-laterais img {
+    width: 300px;
+    height: auto;
+    max-height: 110px; /* Limita a altura para ficar bonito */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    flex: 1;
+}
+
+/* Recursos e Serviços */
+/*Botões e sobre*/
+
+.recursos-servicos {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.span {
+    color: violet;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    background-color: #2e2e2e;
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.pSobre {
+    text-align: justify;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.card p {
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.sobre-nos {
+    margin-top: 60px;
+    padding: 0 40px;
+    color: white;
+    text-align: center;
+}
+
+
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.sobre-container img {
+    width: 150px;
+}
+
+.sobre-container p {
+    flex: 1;
+    font-size: 3vh;
+    line-height: 1.6;
+}
+
+
+/* Animação suave para hover */
+.banner-principal img,
+.imagens-laterais img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efeito de "zoom" com sombra ao passar o mouse */
+.banner-principal img:hover,
+.imagens-laterais img:hover,
+.logo img:hover,
+.fundoCadastro button:hover,
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
