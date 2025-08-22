@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/Vestibulhama/Src/cadastroQuestao/cadastroQuestao.css">
+  <link rel="stylesheet" href="../cadastroQuestao/cadastroQuestao.css">
 </head>
 <body>
 <?php
@@ -17,14 +17,14 @@
     <label for="Vestibular">Vestibular</label>
     <select name="vestibular" id="vestibular">
       <?php
-      selectValues('vestibular', 'vest', $conexao);
+      selectValues('vestibular', 'vest', $conexao, 'Vestibular');
       ?>
     </select>
 
     <label for="materia">Matéria</label>
     <select name="materia" id="materia">
       <?php
-       selectValues('materia', 'mat', $conexao);
+       selectValues('materia', 'mat', $conexao, 'Matéria');
       ?>
       </select>
 
@@ -37,17 +37,20 @@
     <label for="correta">Alternativa Correta (A, B, C, D, E)</label>
     <input type="text" id="correta" name="correta">
 
-    <label for="altB">Alternativa 1</label>
+    <label for="altA">Alternativa A</label>
     <input type="text" id="alt1" name="alt1">
 
-    <label for="altC">Alternativa 2</label>
+    <label for="altB">Alternativa B</label>
     <input type="text" id="alt2" name="alt2">
 
-    <label for="altD">Alternativa 3</label>
+    <label for="altC">Alternativa C</label>
     <input type="text" id="alt3" name="alt3">
 
-    <label for="altE">Alternativa 4</label>
+    <label for="altD">Alternativa D</label>
     <input type="text" id="alt4" name="alt4">
+    
+    <label for="altE">Alternativa E</label>
+    <input type="text" id="alt5" name="alt5">
 
     <label for="ano">Ano da Prova</label>
     <select id="ano" name="ano">
@@ -65,7 +68,7 @@
 
   <?php
   include_once('../footer/footer.html');
-  function selectValues($table, $blabla, $conexao) 
+  function selectValues($table, $blabla, $conexao, $error) 
   {
       $sql = "select * from $table order by nome";
     $resultado = mysqli_query($conexao, $sql);
@@ -74,7 +77,7 @@
             echo "<option value='{$blabla['id']}'>{$blabla['nome']}</option>";
         }
     } else {
-        echo "<option value=''>Nenhum vestibular encontrado</option>";
+        echo "<option value=''>Nenhum(a) $error encontrado</option>";
     }
   }
   

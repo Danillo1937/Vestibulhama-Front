@@ -11,6 +11,7 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
     $alt2 = $_POST['alt2'];
     $alt3 = $_POST['alt3'];
     $alt4 = $_POST['alt4'];
+    $alt5 = $_POST['alt5'];
     $ano = $_POST['ano'];
 
     if(isset($_FILES['foto']['name'])){
@@ -36,7 +37,7 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
 
     // Corrija os nomes das colunas conforme sua tabela
     $query = "insert into questao (id_vestibular, id_materia, enunciado, foto, alt_correta, alt1, alt2, alt3, alt4, ano) 
-              values ('$faculdade', '$materia', '$enunciado', '$foto', '$correta', '$alt1', '$alt2', '$alt3', '$alt4', '$ano')";
+              values ('$faculdade', '$materia', '$enunciado', '$foto', '$correta', '$alt1', '$alt2', '$alt3', '$alt4', '$alt5', '$ano')";
 
     if(mysqli_query($conexao, $query)) {
         echo "Questão adicionada com sucesso!";

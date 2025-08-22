@@ -32,12 +32,12 @@ CREATE TABLE questao (
     enunciado VARCHAR(500) NOT NULL,
     dificuldade VARCHAR(20),
     alt_correta VARCHAR(200),
-    alt1 VARCHAR(200),
-    alt2 VARCHAR(200),
-    alt3 VARCHAR(200),
-    alt4 VARCHAR(200),
+    a VARCHAR(200),
+    b VARCHAR(200),
+    c VARCHAR(200),
+    d VARCHAR(200),
+    e VARCHAR(200),
     CONSTRAINT fk_id_materia FOREIGN KEY (id_materia) REFERENCES materia(id),
-    CONSTRAINT fk_id_faculdade FOREIGN KEY (id_faculdade) REFERENCES faculdade(id),
     CONSTRAINT fk_id_vestibular FOREIGN KEY (id_vestibular) REFERENCES vestibular(id)
 );
 

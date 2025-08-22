@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Vestibulhama/Src/HomePage/homepage.css">
+    <link rel="stylesheet" href="../HomePage/homepage.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <h2>Recursos e <span class ="span">Serviços</span></h2>
         <div class="cards">
             <div class="card">
-                <a href="#"><img src="../images/pessoaescrevendo.jpg" alt="Vestibulares"></a>
+                <a href="../Vestibulares/vestibulares.php"><img src="../images/pessoaescrevendo.jpg" alt="Vestibulares"></a>
                 <p>Vestibulares</p>
             </div>
 

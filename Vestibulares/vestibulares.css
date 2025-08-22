@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.year-card {
+    background: linear-gradient(to bottom right, #8e24aa, #6a1b9a);
+    border-radius: 10px;
+    width: 150px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.year-card p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+}
+
+.banner-principal img,
+.imagens-laterais img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efeito de "zoom" com sombra ao passar o mouse */
+.banner-principal img:hover,
+.imagens-laterais img:hover,
+.logo img:hover,
+.fundoCadastro button:hover,
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
