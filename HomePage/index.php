@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../HomePage/homepage.css">
+    <link rel="stylesheet" href="homepage.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 
             <a href=""></a>
             <div class="card">
-                <a href="../Html/ranking.html"><img src="../images/pessoamedalha.jpg" alt="Ranking de Notas"></a>
+                <a href="../ranking/ranking.php"><img src="../images/pessoamedalha.jpg" alt="Ranking de Notas"></a>
                 <p>Ranking de Notas</p>
             </div>
             <div class="card">

@@ -63,3 +63,22 @@ a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
+
+.questoes-container {
+    padding: 40px;
+    background-color: #1e1e1e;
+    color: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.questao p {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+li{
+    color: white;
+}
