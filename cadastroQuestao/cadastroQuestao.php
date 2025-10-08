@@ -13,7 +13,7 @@
      ?>
   <h1>Adicionar Nova <span>Questão</span></h1>
 
-  <form method="post" action="cadastrarQuestao.php">
+  <form method="post" action="cadastrarQuestao.php" enctype="multipart/form-data">
     <label for="Vestibular">Vestibular</label>
     <select name="vestibular" id="vestibular">
       <?php

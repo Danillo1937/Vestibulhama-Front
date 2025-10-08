@@ -3,7 +3,7 @@
 if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enunciado']) && isset($_POST['correta']) 
     && isset($_POST['alt1']) && isset($_POST['alt2']) && isset($_POST['alt3']) && isset($_POST['alt4']) && isset($_POST['ano'])) {
 
-    $faculdade = $_POST['vestibular'];
+    $vestibular = $_POST['vestibular'];
     $materia = $_POST['materia'];
     $enunciado = $_POST['enunciado'];
     $correta = $_POST['correta'];
@@ -24,7 +24,7 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
                 //Gera um nome aleatório para a imagem
                 $novonome = md5(microtime()).$ext;
                 //Especifica a pasta onde será salva a imagem
-                $destino = "images_U/".$novonome;
+                $destino = "../imagesQ/".$novonome;
                 //Salva a imagem na pasta
                 move_uploaded_file($tmp_foto, $destino);
                 //define o nome da foto para ser inserido na tabela
@@ -36,8 +36,8 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
     include_once('../BD/conexao.php');   
 
     // Corrija os nomes das colunas conforme sua tabela
-    $query = "insert into questao (id_vestibular, id_materia, enunciado, foto, alt_correta, alt1, alt2, alt3, alt4, alt5, ano) 
-              values ('$faculdade', '$materia', '$enunciado', '$foto', '$correta', '$alt1', '$alt2', '$alt3', '$alt4', '$alt5', '$ano')";
+    $query = "insert into questao  
+              values (NULL, '$materia','$foto',$vestibular,'$enunciado',$ano ,'$correta', '$alt1', '$alt2', '$alt3', '$alt4', '$alt5')";
 
     if(mysqli_query($conexao, $query)) {
         echo "Questão adicionada com sucesso!";
