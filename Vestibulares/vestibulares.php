@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include_once('../navbar/navbar.html');
+    include_once('../navbar/navbar.php');
 
     // Exibe os vestibulares disponíveis
     echo '<div class="container">';

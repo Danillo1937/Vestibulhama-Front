@@ -1,18 +1,17 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="../homePage/homepage.css">
 </head>
 
 <body>
 <?php
-     include_once('../navbar/navbar.html');
+     include_once('../navbar/navbar.php');
      
 ?>
-<a href="../cadastroQuestao/cadastroQuestao.php">aaaa</a>
 <div class="container">
     <div class="banner-principal">
         <a href="https://querobolsa.com.br/revista/turma-de-verao"><img src="../images/img.png" alt="Estudar de Verão 2024"></a>
@@ -39,7 +38,7 @@
                 <p>Ranking de Notas</p>
             </div>
             <div class="card">
-                <a href="vestibularesEscolha.html"><img src="../images/assinalandoquestao.png" alt="Simulados Aleatórios"></a>
+                <a href="../VestibularesSelecao/VestibularesEscolha.php"><img src="../images/assinalandoquestao.png" alt="Simulados Aleatórios"></a>
                 <p>Personalizar Prova</p>
             </div>
         </div>

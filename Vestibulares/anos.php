@@ -9,7 +9,7 @@
 <body>
 
 <?php
-include_once('../navbar/navbar.html');
+include_once('../navbar/navbar.php');
 include_once('../BD/conexao.php');
 
 if (isset($_GET['vestibular'])) {

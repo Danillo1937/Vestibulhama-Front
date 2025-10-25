@@ -41,6 +41,7 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
 
     if(mysqli_query($conexao, $query)) {
         echo "Questão adicionada com sucesso!";
+        header("Location: cadastrarQuestao.php");
     } else {
         echo "Erro ao adicionar questão: " . mysqli_error($conexao);
     } 

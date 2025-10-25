@@ -1,0 +1,171 @@
+.card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.cards-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-container {
+    position: relative;
+    width: 230px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-container:hover {
+    transform: scale(1.03);
+}
+
+.card-container input[type="checkbox"] {
+    display: block; /* Torna o checkbox visível */
+    margin: 10px auto; /* Centraliza o checkbox */
+    cursor: pointer;
+}
+
+.card-container label {
+    display: block;
+    position: relative;
+    padding-top: 10px; /* Espaço para o checkbox */
+}
+
+.card-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-title {
+    padding: 8px 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.card-container {
+    position: relative;
+    width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.card-container:hover {
+    transform: scale(1.03);
+}
+
+.card-container input[type="checkbox"] {
+    display: block; /* Torna o checkbox visível */
+    margin: 10px auto; /* Centraliza o checkbox */
+    cursor: pointer;
+}
+
+.card-container label {
+    display: block;
+    position: relative;
+    padding-top: 10px; /* Espaço para o checkbox */
+}
+
+.card-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-title {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: white;
+}
+
+.botao {
+    display: block;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #8e24aa;
+}
+
+.year-card {
+    background: linear-gradient(to bottom right, #8e24aa, #6a1b9a);
+    border-radius: 10px;
+    width: 150px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.year-card p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}

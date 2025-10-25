@@ -1,0 +1,84 @@
+  
+  body {
+    background: url("../images/Lhama\ Acadêmica\ Sob\ o\ Céu\ Estrelado.png") no-repeat;
+    background-position: center;
+    background-size:  cover;
+    
+  }
+  
+  /* ======= CONTAINER PRINCIPAL ======= */
+  .container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 60px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    
+  }
+  
+  /* ======= FOTO DO PERFIL ======= */
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #673ab7;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    background: url(lahama3.png) ;
+  }
+  
+  /* ======= BOTÃO ALTERAR FOTO ======= */
+  .btn-photo {
+    display: inline-block;
+    background: #7b42f6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-photo:hover {
+    background: #5e2dd1;
+  }
+  
+  /* ======= INPUT DE NOME ======= */
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    outline: none;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  /* ======= BOTÃO SALVAR ======= */
+  .btn-save {
+    display: inline-block;
+    background: #7b42f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-save:hover {
+    background: #5e2dd1;
+  }
+  

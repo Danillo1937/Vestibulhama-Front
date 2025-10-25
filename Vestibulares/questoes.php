@@ -9,12 +9,103 @@
         .questao-enunciado, .questao-alternativas {
             color: white;
         }
+
+        body {
+  background-color: #121212;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f0f0f0;
+}
+
+h2 {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 32px;
+  margin-top: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.questoes-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.questao {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+}
+
+.questao-enunciado {
+  margin: 10px 0;
+  line-height: 1.5;
+    font-size: 20px;
+}
+
+.questao img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.questao-alternativas label {
+  display: block;
+  margin: 8px 0;
+  padding: 8px 12px;
+  background-color: #3a3a3a;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.questao-alternativas label:hover {
+  background-color: #4a4a4a;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #531f91;
+}
+
+button[type="submit"] {
+  background-color: #531f91;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  font-family:"jersey 10", sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #6b2bbd;
+  
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
     </style>
 </head>
 <body>
 
 <?php
-include_once('../navbar/navbar.html');
+include_once('../navbar/navbar.php');
 include_once('../BD/conexao.php');
 
 $vestibularId = $_GET['vestibular'] ?? $_POST['vestibular'] ?? null;
@@ -45,7 +136,7 @@ if ($vestibularId && $ano) {
 
     foreach ($questoes as $i => $q) {
         echo "<div class='questao'>";
-        echo "<p class='questao-enunciado'><strong>Enunciado:</strong> " . $q['enunciado'] . "</p>";
+        echo "<p class='questao-enunciado'>Enunciado: " . $q['enunciado'] . "</p>";
         echo "<img src='../images_U/" . $q['foto'] . "' alt='Imagem da questão' style='max-width:300px;'><br>";
 
         $correta = strtoupper(trim($q['alt_correta'])); // Letra correta (A–E)
@@ -64,10 +155,10 @@ if ($vestibularId && $ano) {
         // Feedback por questão
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($respostaUsuario === $correta) {
-                echo "<p style='color:lime;'><strong>✔ Você acertou!</strong></p>";
+                echo "<p style='color:lime;'> ✔ Você acertou!</p>";
                 $acertos++;
             } else {
-                echo "<p style='color:red;'><strong✘ Você errou.</strong> Resposta correta: $correta</p>";
+                echo "<p style='color:red;'> ✘ Você errou. Resposta correta: $correta</p>";
             }
         }
 
@@ -99,7 +190,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_stmt_execute($stmtInsert);
 }
 
-session_start();
 $nomeUsuario = $_SESSION['usuario'] ?? 'Visitante';
 $idUsuario = $_SESSION['id_usuario'] ?? null;
 

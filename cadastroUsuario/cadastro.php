@@ -5,28 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vestibulhama - Cadastro</title>
-  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="../cadastroUsuario/cadastroUser.css">
 </head>
+    <?php
+    include_once('../navbar/navbar.php');
+    ?>
 <body>
-
-  
   <div class="pai">
-<div class="logo">
+
+  <div class="logo">
     <!-- Ícone de lhama (troque a URL pela sua logo se quiser) -->
-    <img src="../images/logo nova sla to cansado.png" alt="Logo">
-    Vestibulhama
+    <img style = "width: 100px; height:100px;"src="../images/logo nova sla to cansado.png" alt="Logo">
+    <span  style = "font-size:50px; color:#531f91;">Vestibulhama</span>
   </div>
   <div class="container">
     
 
     <h2>CRIAR USUÁRIO</h2>
-<form class="form" method="post" action="cadastro.php">
-  <input type="text" name="nome" placeholder="Nome" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="password" name="senha" placeholder="Senha" required>
-  <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
-  <button type="submit">CRIAR CONTA</button>
-</form>
+    <form class="form" method="post" action="cadastro.php">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
+      <button type="submit">CRIAR CONTA</button>
+    </form>
 
 <?php
 include_once('../BD/conexao.php');
@@ -34,9 +36,9 @@ include_once('../BD/conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $nome = $_POST['nome'] ?? '';
-  $email = $_POST['email'] ?? '';
-  $senha = $_POST['senha'] ?? '';
-  $confirmar = $_POST['confirmar_senha'] ?? '';
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+  $confirmar = $_POST['confirmar_senha'];
 
   // Verifica se as senhas coincidem
   if ($senha !== $confirmar) {
@@ -73,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
     <div class="login-link">
-      Já tem conta? <a href="login.html">Logar</a>
+     <span style = "font-size:20px;"> Já tem conta? <a href="../loginUsuario/login.php">Logar</a></span>
     </div>
   </div>
 </div>

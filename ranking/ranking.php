@@ -1,5 +1,14 @@
-<?php
-include_once('../navbar/navbar.html');
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../ranking/ranking.css">
+</head>
+<body>
+    <?php
+include_once('../navbar/navbar.php');
 include_once('../BD/conexao.php');
 
 $query = "SELECT r.nome_usuario, v.nome AS vestibular, r.ano, r.acertos, r.total_questoes, r.data_registro 
@@ -10,8 +19,8 @@ $query = "SELECT r.nome_usuario, v.nome AS vestibular, r.ano, r.acertos, r.total
 
 $result = mysqli_query($conexao, $query);
 
-echo "<h2 style='text-align:center; color:white;'>Ranking de Simulados</h2>";
-echo "<table style='margin:0 auto; color:white; border-collapse:collapse;'>";
+echo "<h2>Ranking de Simulados</h2>";
+echo "<table>";
 echo "<tr style='background-color:#2e2e2e;'><th style='padding:10px;'>Usuário</th><th>Vestibular</th><th>Ano</th><th>Acertos</th><th>Total</th><th>Data</th></tr>";
 
 while ($row = mysqli_fetch_assoc($result)) {
@@ -29,3 +38,6 @@ echo "</table>";
 mysqli_close($conexao);
 include_once('../footer/footer.html');
 ?>
+</body>
+</html>
+

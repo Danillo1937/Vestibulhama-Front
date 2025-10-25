@@ -33,6 +33,10 @@
     gap: 12px;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   .menu a {
     color: white;
     text-decoration: none;
@@ -61,3 +65,5 @@
     width: 30px;
     height: 30px;
   }
+
+  
