@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Vestibulhama - Cadastro Questão</title>
   <link rel="stylesheet" href="../cadastroQuestao/cadastroQuestao.css">
 </head>
 <body>
 <?php
-     include_once('../navbar/navbar.html');
+     include_once('../navbar/navbar.php');
       include_once('../BD/conexao.php');
      ?>
   <h1>Adicionar Nova <span>Questão</span></h1>
@@ -60,8 +60,8 @@
     </select>
 
     <div class="buttons">
-      <button type="submit"  class="btn">Adicionar Prova</button>
-      <button type="submit" href = "../cadastroQuestao/cadastroQuestao.php" class="btn btn-alt">Adicionar Mais</button>
+      <button type="submit" class="btn"href = "../HomePage/index.php">Adicionar Prova</button>
+      <button type="submit" class="btn btn-alt">Adicionar Mais</button>
     </div>
   </form>
 
@@ -70,7 +70,7 @@
   include_once('../footer/footer.html');
   function selectValues($table, $blabla, $conexao, $error) 
   {
-      $sql = "select * from $table order by nome";
+    $sql = "select * from $table order by nome";
     $resultado = mysqli_query($conexao, $sql);
     if(mysqli_num_rows($resultado) > 0) {
         while($blabla = mysqli_fetch_assoc($resultado)) {

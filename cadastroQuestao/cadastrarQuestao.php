@@ -34,25 +34,16 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
                 $foto = "padrao.png";
             }
     include_once('../BD/conexao.php');   
-
+        }
     // Corrija os nomes das colunas conforme sua tabela
     $query = "insert into questao  
               values (NULL, '$materia','$foto',$vestibular,'$enunciado',$ano ,'$correta', '$alt1', '$alt2', '$alt3', '$alt4', '$alt5')";
 
     if(mysqli_query($conexao, $query)) {
         echo "Questão adicionada com sucesso!";
-        header("Location: cadastrarQuestao.php");
+       
     } else {
         echo "Erro ao adicionar questão: " . mysqli_error($conexao);
     } 
-    
-
-    mysqli_close($conexao);
-    }else {
-        echo "Preencha todos os campos!";
-    }
-
-
-
 
 ?>

@@ -103,6 +103,7 @@ hr {
     </style>
 </head>
 <body>
+  
 
 <?php
 include_once('../navbar/navbar.php');
@@ -137,7 +138,7 @@ if ($vestibularId && $ano) {
     foreach ($questoes as $i => $q) {
         echo "<div class='questao'>";
         echo "<p class='questao-enunciado'>Enunciado: " . $q['enunciado'] . "</p>";
-        echo "<img src='../images_U/" . $q['foto'] . "' alt='Imagem da questão' style='max-width:300px;'><br>";
+        echo "<img src='../imagesQ/" . $q['foto'] . "' alt='Imagem da questão' style='max-width:300px;'><br>";
 
         $correta = strtoupper(trim($q['alt_correta'])); // Letra correta (A–E)
         $respostaUsuario = $respostas[$i] ?? null;

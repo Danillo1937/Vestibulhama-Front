@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!empty($_FILES['nova_foto']['name'])) {
     $ext = pathinfo($_FILES['nova_foto']['name'], PATHINFO_EXTENSION);
     $fotoNome = 'perfil_' . $idUsuario . '.' . $ext;
-    move_uploaded_file($_FILES['nova_foto']['tmp_name'], "../imagesQ/$fotoNome");
+    move_uploaded_file($_FILES['nova_foto']['tmp_name'], "../images_perfil/$fotoNome");
   }
 
   // Atualiza no banco

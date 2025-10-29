@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="../Vestibulares/vestibulares.css">
 </head>
 <body>
+<style>
+    html, body { height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .pai {
+      flex: 1;
+    }
+</style>
 
 <?php
 include_once('../navbar/navbar.php');

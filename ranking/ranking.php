@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../ranking/ranking.css">
 </head>
 <body>
+
+
     <?php
 include_once('../navbar/navbar.php');
 include_once('../BD/conexao.php');

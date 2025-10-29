@@ -79,14 +79,14 @@ if ($idUsuario) {
   
   <nav class="navbar">
     <div class="logo">
-      <img src="../images/Logo_VestibuLhama.jpeg" alt="Logo">
+      <img class = "logo"src="../images/Logo_VestibuLhama.jpeg" alt="Logo">
       <a href="../HomePage/index.php">Vestibulhama</a>
     </div>
 
     <div class="menu">
-      <a href="../HomePage/index.php#sobre-nos">Sobre</a>
-      <a href="../HomePage/index.php#propagandas">Notícias</a>
-      <a href="../HomePage/index.php#recursos-servicos">Recursos Serviços</a>
+      <a href="../HomePage/index.php#sobre">Sobre</a>
+      <a href="../HomePage/index.php#propaganda">Notícias</a>
+      <a href="../HomePage/index.php#servicos">Recursos Serviços</a>
     </div>
 
     <div class="profile">
@@ -96,7 +96,7 @@ if ($idUsuario) {
          <img src="../images_perfil/<?= htmlspecialchars($fotoPerfil) ?>" alt="Perfil" class="hamburger-icon" onclick="toggleMenu()" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
           <div class="hamburger-menu" id="hamburgerMenu">
             <a href="../Perfil/perfil.php">Meu Perfil</a>
-            <a href="../admin/dashboard.php">Cadastrar Questão</a>
+            <a href="../cadastroQuestao/cadastroQuestao.php">Cadastrar Questão</a>
             <a href="../navbar/logout.php">Sair</a>
           </div>
         <?php elseif ($_SESSION['tipo'] === 'user'): ?>

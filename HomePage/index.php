@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="../homePage/homepage.css">
 </head>
 
@@ -14,7 +14,7 @@
 ?>
 <div class="container">
     <div class="banner-principal">
-        <a href="https://querobolsa.com.br/revista/turma-de-verao"><img src="../images/img.png" alt="Estudar de Verão 2024"></a>
+        <a href="https://querobolsa.com.br/revista/turma-de-verao"><img class ="banner" src="../images/img.png" alt="Estudar de Verão 2024"></a>
     </div>
 
     <div class="imagens-laterais">
@@ -25,7 +25,7 @@
     </div>
 </div>
     <section class="recursos-servicos">
-        <h2>Recursos e <span class ="span">Serviços</span></h2>
+        <h2 id="servicos">Recursos e <span class ="span">Serviços</span></h2>
         <div class="cards">
             <div class="card">
                 <a href="../Vestibulares/vestibulares.php"><img src="../images/pessoaescrevendo.jpg" alt="Vestibulares"></a>

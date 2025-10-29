@@ -7,6 +7,19 @@
   <title>Vestibulhama - Cadastro</title>
   <link rel="stylesheet" href="../cadastroUsuario/cadastroUser.css">
 </head>
+<style>
+    html, body { height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .pai {
+      flex: 1;
+    }
+</style>
     <?php
     include_once('../navbar/navbar.php');
     ?>
@@ -27,6 +40,7 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
+      <!-- <input type="text" name="tipo" placeholder="tipo" required> -->
       <button type="submit">CRIAR CONTA</button>
     </form>
 
@@ -39,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $senha = $_POST['senha'];
   $confirmar = $_POST['confirmar_senha'];
+  // $tipo_usuario = $_POST['tipo'];
 
   // Verifica se as senhas coincidem
   if ($senha !== $confirmar) {
@@ -66,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_stmt_execute($stmt)) {
       echo "<p style='color:lime; text-align:center;'>Cadastro realizado com sucesso!</p>";
-      header("refresh:2;url=../HomePage/index.php");
+    
       exit;
     } else {
       echo "<p style='color:red; text-align:center;'>Erro ao cadastrar.</p>";

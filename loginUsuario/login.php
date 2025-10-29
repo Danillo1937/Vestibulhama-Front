@@ -54,8 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   ?>
   <div class="pai">
     <div class="logo">
-      <img src="../images/logo nova sla to cansado.png" alt="Logo">
-      Vestibulhama
+      <img style = "width: 100px; height:100px;" src="../images/logo nova sla to cansado.png" alt="Logo">
+      <h1 class="titulo">Vestibulhama</h1>
     </div>
     <div class="container">
       <h2>LOGIN</h2>
