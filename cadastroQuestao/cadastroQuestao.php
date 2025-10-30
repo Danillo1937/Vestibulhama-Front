@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vestibulhama - Cadastro Questão</title>
-  <link rel="stylesheet" href="../cadastroQuestao/cadastroQuestao.css">
-</head>
-<body>
 <?php
-     include_once('../navbar/navbar.php');
-      include_once('../BD/conexao.php');
-     ?>
+$pageTitle = 'Cadastrar Questão';
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
+echo "<link rel=\"stylesheet\" href=\"/Vestibulhama-Front/cadastroQuestao/cadastroQuestao.css\">";
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/BD/conexao.php');
+?>
   <h1>Adicionar Nova <span>Questão</span></h1>
 
   <form method="post" action="cadastrarQuestao.php" enctype="multipart/form-data">
@@ -60,8 +54,7 @@
     </select>
 
     <div class="buttons">
-      <button type="submit" class="btn"href = "../HomePage/index.php">Adicionar Prova</button>
-      <button type="submit" class="btn btn-alt">Adicionar Mais</button>
+      <button type="submit" class="btn">Adicionar Prova</button>
     </div>
   </form>
 

@@ -1,7 +1,7 @@
   body {
     margin: 0;
     padding: 0;
-    font-family:"jersey 10", sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #121212;
   }
 
@@ -10,7 +10,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: #2a2a2a;
-    padding: 14px 18px;
+    padding: 8px 16px;
+    height: 60px;
+    box-sizing: border-box;
   }
 
   .logo {
@@ -18,13 +20,15 @@
     align-items: center;
     color: white;
     font-size: 18px;
+    height: 100%;
   }
 
   .logo img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     margin-right: 8px;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   .menu {
@@ -59,9 +63,115 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* permite posicionar o dropdown relativo ao profile */
   }
 
   .profile img {
     width: 30px;
     height: 30px;
   }
+
+/* Perfil: menu dropdown (itens empilhados verticalmente) */
+.hamburger-menu {
+  display: none; /* visibilidade controlada via JS */
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #2a2a2a;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 8px;
+  min-width: 160px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column; /* itens um abaixo do outro */
+  gap: 6px;
+}
+
+.hamburger-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.hamburger-menu a:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+/* Esconder hambúrguer por padrão em todas as telas */
+.hamburger {
+    display: none;
+}
+
+/* Responsive: allow menu to wrap and reduce sizes on small screens */
+@media (max-width: 768px) {
+  .menu {
+    gap: 8px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .logo a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Menu mobile: oculto por padrão */
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #2a2a2a;
+    position: absolute;
+    top: 60px;
+    right: 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 220ms ease, transform 220ms ease;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Menu mobile: visível quando ativado */
+  .menu.visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: flex;
+  }
+
+  /* Mostrar hamburger apenas em mobile */
+  .hamburger {
+    display: block;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 6px 8px;
+    transition: opacity 0.2s;
+  }
+
+  .hamburger:hover {
+    opacity: 0.8;
+  }
+
+  /* Ajustes de espaçamento no menu mobile */
+  .menu a {
+    width: 100%;
+    padding: 10px 16px;
+    box-sizing: border-box;
+  }
+}
+
+/* Por padrão o hamburger é escondido; nas media queries pequenas ele é exibido */
+/* (regra para esconder em telas maiores foi removida para evitar sobrescrever a media query) */
+
+/* Pequenos ajustes visuais quando o menu está empilhado */
+.menu a {
+  padding: 8px 6px;
+}

@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../ranking/ranking.css">
-</head>
-<body>
-
-
-    <?php
-include_once('../navbar/navbar.php');
-include_once('../BD/conexao.php');
+<?php
+$pageTitle = 'Ranking de Simulados';
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
+echo "<link rel=\"stylesheet\" href=\"/Vestibulhama-Front/ranking/ranking.css\">";
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/BD/conexao.php');
 
 $query = "SELECT r.nome_usuario, v.nome AS vestibular, r.ano, r.acertos, r.total_questoes, r.data_registro 
           FROM ranking r
@@ -35,8 +27,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>" . date('d/m/Y H:i', strtotime($row['data_registro'])) . "</td>";
     echo "</tr>";
 }
-
 echo "</table>";
+echo "</div>"; /* close table-wrapper */
+echo "</div>"; /* close pai */
 mysqli_close($conexao);
 include_once('../footer/footer.html');
 ?>

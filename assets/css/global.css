@@ -1,0 +1,42 @@
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body { 
+    height: 100%;
+}
+
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+     max-width: 100%;
+      height: auto; 
+      display: block;
+      font-family: "jersey 10", sans-serif;
+     }
+.container { 
+    width: 90%;
+     max-width: 1200px;
+      margin: 0 auto; 
+      }
+/* layout que empurra o footer para o final */
+.main-push { 
+    display: flex;
+     flex-direction: 
+     column; 
+     min-height: 100vh;
+ }
+.main-push > .pai { flex: 1; }
+
+@media (max-width: 768px) {
+  .container { width: 94%; }
+}

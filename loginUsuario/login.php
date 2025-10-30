@@ -25,36 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erro = "Usuário não encontrado.";
     }
 }
+
+$pageTitle = 'Login - Vestibulhama';
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
+echo '<link rel="stylesheet" href="/Vestibulhama-Front/loginUsuario/loginUsu.css">';
+include_once('../navbar/navbar.php');
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vestibulhama - Login</title>
-  <link rel="stylesheet" href="../loginUsuario/loginUsu.css">
-</head>
-<style>
-    html, body { height: 100%; }
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-    }
-
-    .pai {
-      flex: 1;
-    }
-</style>
-
-<body>
-  <?php
-    include_once('../navbar/navbar.php');
-  ?>
   <div class="pai">
-    <div class="logo">
-      <img style = "width: 100px; height:100px;" src="../images/logo nova sla to cansado.png" alt="Logo">
+    <div class="login-logo-wrapper">
+      <img src="../images/logo nova sla to cansado.png" alt="Logo">
       <h1 class="titulo">Vestibulhama</h1>
     </div>
     <div class="container">
@@ -70,7 +49,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </div>
 
-<?php include_once('../footer/footer.html'); ?>
-
-</body>
-</html>
+  <?php include_once('../footer/footer.html'); ?>

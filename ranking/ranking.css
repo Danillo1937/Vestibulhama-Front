@@ -1,5 +1,14 @@
+/* Wrapper to allow horizontal scroll on small screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
 table {
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   margin: 20px auto;
   border-collapse: collapse;
@@ -40,5 +49,28 @@ h2 {
   margin-top: 40px;
   color: #fff;
   text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 22px;
+    margin-top: 24px;
+    padding: 0 12px;
+  }
+  table th, table td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  table {
+    margin: 14px auto;
+  }
+}
+
+@media (max-width: 420px) {
+  table th, table td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
 }
 

@@ -1,12 +1,10 @@
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vestibulhama - Cadastro</title>
-  <link rel="stylesheet" href="../cadastroUsuario/cadastroUser.css">
-</head>
+<?php
+$pageTitle = 'Cadastro - Vestibulhama';
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
+echo "<link rel=\"stylesheet\" href=\"/Vestibulhama-Front/cadastroUsuario/cadastroUser.css\">";
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php');
+?>
 <style>
     html, body { height: 100%; }
     body {
@@ -20,10 +18,6 @@
       flex: 1;
     }
 </style>
-    <?php
-    include_once('../navbar/navbar.php');
-    ?>
-<body>
   <div class="pai">
 
   <div class="logo">
@@ -40,6 +34,7 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
+      <!-- <input type="text" name="tipo_usuario" placeholder="tipo_usuario" required> -->
       <!-- <input type="text" name="tipo" placeholder="tipo" required> -->
       <button type="submit">CRIAR CONTA</button>
     </form>
@@ -53,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $senha = $_POST['senha'];
   $confirmar = $_POST['confirmar_senha'];
-  // $tipo_usuario = $_POST['tipo'];
+  //$tipo_usuario = $_POST['tipo_usuario'];
 
   // Verifica se as senhas coincidem
   if ($senha !== $confirmar) {
@@ -77,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insere no banco
     $query = "INSERT INTO usuario (nome, email, tipo_usuario, senha) VALUES (?, ?, 'user', ?)";
     $stmt = mysqli_prepare($conexao, $query);
-    mysqli_stmt_bind_param($stmt, "sss", $nome, $email, $senhaSegura);
+    mysqli_stmt_bind_param($stmt, "sss", $nome, $email,$senhaSegura);
 
     if (mysqli_stmt_execute($stmt)) {
       echo "<p style='color:lime; text-align:center;'>Cadastro realizado com sucesso!</p>";

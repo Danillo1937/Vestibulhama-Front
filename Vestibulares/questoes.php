@@ -1,116 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado</title>
-    <link rel="stylesheet" href="../Vestibulares/vestibulares.css">
-    <style>
-        .questao-enunciado, .questao-alternativas {
-            color: white;
-        }
-
-        body {
-  background-color: #121212;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #f0f0f0;
-}
-
-h2 {
-  font-family: 'Jersey 10', sans-serif;
-  font-size: 32px;
-  margin-top: 40px;
-  text-align: center;
-  color: #fff;
-}
-
-.questoes-container {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-.questao {
-  margin-bottom: 30px;
-  padding: 15px;
-  background-color: #2a2a2a;
-  border-radius: 6px;
-}
-
-.questao-enunciado {
-  margin: 10px 0;
-  line-height: 1.5;
-    font-size: 20px;
-}
-
-.questao img {
-  max-width: 100%;
-  height: auto;
-  margin: 10px auto;
-  display: block;
-  border-radius: 4px;
-}
-
-.questao-alternativas label {
-  display: block;
-  margin: 8px 0;
-  padding: 8px 12px;
-  background-color: #3a3a3a;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.questao-alternativas label:hover {
-  background-color: #4a4a4a;
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-  accent-color: #531f91;
-}
-
-button[type="submit"] {
-  background-color: #531f91;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin: 20px auto;
-  font-family:"jersey 10", sans-serif;
-}
-
-button[type="submit"]:hover {
-  background-color: #6b2bbd;
-  
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #444;
-  margin: 20px 0;
-}
-    </style>
-</head>
-<body>
-  
-
 <?php
-include_once('../navbar/navbar.php');
-include_once('../BD/conexao.php');
+$pageTitle = 'Simulado';
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
+?>
+<style>
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.page-content {
+    flex: 1 0 auto;
+    padding-bottom: 40px;
+}
+</style>
+<?php
+echo "<link rel=\"stylesheet\" href=\"/Vestibulhama-Front/Vestibulares/vestibulares.css\">";
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php');
+?>
+<div class="page-wrapper">
+    <div class="page-content">
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/BD/conexao.php');
 
-$vestibularId = $_GET['vestibular'] ?? $_POST['vestibular'] ?? null;
-$ano = $_GET['ano'] ?? $_POST['ano'] ?? null;
+ $vestibularId = $_GET['vestibular'] ?? $_POST['vestibular'] ?? null;
+ $ano = $_GET['ano'] ?? $_POST['ano'] ?? null;
 
 if ($vestibularId && $ano) {
     echo "<h2 style='text-align:center; color:white;'>Simulado - $ano</h2>";
@@ -127,7 +40,7 @@ if ($vestibularId && $ano) {
         $questoes[] = $row;
     }
 
-    echo "<form method='post'>";
+    echo "<form class='form' method='post'>";
     echo "<input type='hidden' name='vestibular' value='$vestibularId'>";
     echo "<input type='hidden' name='ano' value='$ano'>";
     echo "<div class='questoes-container'>";
@@ -166,7 +79,8 @@ if ($vestibularId && $ano) {
         echo "</div><hr>";
     }
 
-    echo "<button type='submit' style='margin:20px auto; display:block;'>Enviar Respostas</button>";
+        // botão usa a mesma aparência dos formulários de cadastro (classe .form button)
+        echo "<button type='submit' class='botao' style='margin:20px auto; display:block;'>Enviar Respostas</button>";
     echo "</div>";
     echo "</form>";
 
@@ -181,7 +95,7 @@ if ($vestibularId && $ano) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nomeUsuario = "Visitante"; // Você pode substituir por login futuramente   
+    $nomeUsuario = "Visitante";  
     $total = count($questoes);
 
     $insert = "INSERT INTO ranking (nome_usuario, vestibular_id, ano, acertos, total_questoes) 
@@ -201,7 +115,7 @@ mysqli_stmt_bind_param($stmtInsert, "siiii", $nomeUsuario, $vestibularId, $ano, 
 mysqli_stmt_execute($stmtInsert);
 
 mysqli_close($conexao);
-include_once('../footer/footer.html');
 ?>
-</body>
-</html>
+    </div>
+    <?php include_once('../footer/footer.html'); ?>
+</div>

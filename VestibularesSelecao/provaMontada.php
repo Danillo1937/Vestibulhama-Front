@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../VestibularesSelecao/vestibulaMontado.css">
-    <title>Prova Montada</title>
-</head>
-<body>
 <?php
+$pageTitle = 'Prova Montada';
 session_start();
-include_once('../navbar/navbar.php');
-include_once('../BD/conexao.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
+echo "<link rel=\"stylesheet\" href=\"/Vestibulhama-Front/VestibularesSelecao/vestibulaMontado.css\">";
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/BD/conexao.php');
 
 // Recupera filtros da sessão
 $vestibulares = $_SESSION['vestibulares'] ?? [];
@@ -36,7 +30,7 @@ $query = "SELECT q.id, q.enunciado, q.foto, q.a, q.b, q.c, q.d, q.e, q.alt_corre
           WHERE q.id_vestibular IN ($vestStr)
           AND q.ano IN ($anoStr)
           AND q.id_materia IN ($matStr)
-          ORDER BY RAND()";  // embaralha as questões
+          ORDER BY RAND()";
 
 $result = mysqli_query($conexao, $query);
 
@@ -70,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['resposta'])) {
     echo "<p>Você acertou <span style='color:lime;'>$acertos</span> de $total questões.</p>";
     echo "</div>";
 
-    include_once('../footer/footer.html');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/footer/footer.html');
     exit;
 }
 
@@ -91,7 +85,7 @@ while ($q = mysqli_fetch_assoc($result)) {
     }
 
     foreach (['a','b','c','d','e'] as $i => $alt) {
-        $letra = chr(65 + $i); // A, B, C, D, E
+        $letra = chr(65 + $i);
         echo "<label style='display:block; margin:5px;'>";
         echo "<input type='radio' name='resposta[{$q['id']}]' value='$letra'> $letra) {$q[$alt]}";
         echo "</label>";
@@ -107,7 +101,7 @@ echo "</div>";
 echo "</div>";
 echo "</form>";
 
-include_once('../footer/footer.html');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/footer/footer.html');
 mysqli_close($conexao);
 ?>
 </body>

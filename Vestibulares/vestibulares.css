@@ -1,3 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-content {
+    flex: 1 0 auto;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -25,6 +44,7 @@
     font-size: 20px;
     color: white;
 }
+
 
 .year-card {
     background: linear-gradient(to bottom right, #8e24aa, #6a1b9a);
@@ -72,6 +92,23 @@ a {
     margin: 0 auto;
     border-radius: 12px;
 }
+
+/* Botão padrão usado em formulários (usar class="botao") */
+.botao {
+    display: block;
+    padding: 13px;
+    margin: 20px auto 0;
+    border: none;
+    border-radius: 25px;
+    background: #6c2eb9;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.botao:hover { background: #531f91; }
 
 .questao p {
     background-color: #2e2e2e;
