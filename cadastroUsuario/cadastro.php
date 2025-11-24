@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_stmt_execute($stmt)) {
       echo "<p style='color:lime; text-align:center;'>Cadastro realizado com sucesso!</p>";
-    
+      header("Location: ../vestibulhama-front/HomePage/index.php");
       exit;
     } else {
       echo "<p style='color:red; text-align:center;'>Erro ao cadastrar.</p>";

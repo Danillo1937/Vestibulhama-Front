@@ -26,7 +26,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php'
 
             <a href=""></a>
             <div class="card">
-                <a href="ranking/ranking.php"><img src="images/pessoamedalha.jpg" alt="Ranking de Notas"></a>
+                <a href="ranking/ranking.php"><img class="Ranking" src="images/pessoamedalha.png" alt="Ranking de Notas"></a>
                 <p>Ranking de Notas</p>
             </div>
             <div class="card">
@@ -39,7 +39,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php'
      <section class="sobre-nos">
         <h2>Sobre <span class="span">Nós</span></h2>
         <div class="sobre-container">
-            <img src="images/rafiki.png" alt="Pessoa curiosa">
             <p class = "pSobre">
                 O VestibuLhama é um site que facilita o acesso às provas dos principais vestibulares do Brasil. Além de reunir exames anteriores, a plataforma permite que os usuários resolvam as questões diretamente no site, tornando os estudos mais práticos e interativos. Com uma interface intuitiva, o VestibuLhama é a ferramenta ideal para quem busca se preparar e alcançar a aprovação.
             </p>

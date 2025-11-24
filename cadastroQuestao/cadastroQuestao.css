@@ -1,59 +1,93 @@
-  h1 {
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-  }
+/* Título */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+}
 
-  h1 span {
-    color: violet;
-  }
+h1 span {
+  color:violet; /* mesma paleta usada nas outras telas */
+}
 
-  form {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-  }
+/* Formulário */
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
 
-  label {
-    font-size: 18px;
-    color: white;
-  }
+/* Labels */
+label {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600px;
+  margin-bottom: 4px;
+}
 
-  input, select {
-    background-color: #7d7d7d;
-    width: 100%;
-    border: none;
-    padding: 10px;;
-    border-radius: 20px;
-    font-size: 14px;
-    color: white;
-  }
+/* Inputs e selects */
+input, select {
+  background-color: rgba(125, 125, 125, 0.85);
+  width: 600px;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 20px;
+  font-size: 15px;
+  color: #fff;
+  transition: 0.3s;
+  outline: none;
+}
 
+input:focus, select:focus {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 8px #6c2eb9;
+}
 
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
+/* Área dos botões */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 10px;
+}
 
-  .btn {
-    background-color: violet;
-    border: none;
-    font-family:"jersey 10", sans-serif;
-    padding: 10px 20px;
-    border-radius: 20px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+/* Botões */
+.btn {
+  flex: 1;
+  background-color: #6c2eb9;
+  border: none;
+  font-family: "Jersey 10", sans-serif;
+  padding: 12px 20px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
 
-  .btn:hover {
-    opacity: 0.8;
-  }
+.btn:hover {
+  background-color: #531f91;
+  transform: scale(1.05);
+}
 
-  .btn-alt {
-    background-color: violet;
-  }
+/* Botão alternativo */
+.btn-alt {
+  background-color: #531f91;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  h1 { font-size: 28px; }
+  form { padding: 18px; border-radius: 12px; }
+  .btn { font-size: 16px; padding: 10px; }
+}

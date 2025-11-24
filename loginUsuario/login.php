@@ -43,6 +43,7 @@ include_once('../navbar/navbar.php');
         <input type="password" name="senha" placeholder="Senha" required>
         <button type="submit">FAZER LOGIN</button>
       </form>
+      <span style = "font-size:20px; margin-top:30px;">Não tem conta? <a href="../cadastroUsuario/cadastro.php">Cadastrar-se</a></span>
       <?php if ($erro): ?>
         <p style="color:red; text-align:center; margin-top:10px;"><?= htmlspecialchars($erro) ?></p>
       <?php endif; ?>

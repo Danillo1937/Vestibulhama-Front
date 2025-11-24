@@ -39,11 +39,16 @@ if(isset($_POST['vestibular']) && isset($_POST['materia']) && isset($_POST['enun
     $query = "insert into questao  
               values (NULL, '$materia','$foto',$vestibular,'$enunciado',$ano ,'$correta', '$alt1', '$alt2', '$alt3', '$alt4', '$alt5')";
 
-    if(mysqli_query($conexao, $query)) {
-        echo "Questão adicionada com sucesso!";
-       
-    } else {
-        echo "Erro ao adicionar questão: " . mysqli_error($conexao);
-    } 
+        if(mysqli_query($conexao, $query)) {
+            echo "<script>
+            if (confirm('Questão adicionada com sucesso! Deseja adicionar outra questão?')) {
+                window.location.href = '../cadastroQuestao/cadastroQuestao.php';
+            } else {
+                window.location.href = '../HomePage/index.php';
+            }
+          </script>";
+        } else {
+            echo "<script>alert('Erro ao adicionar questão: " . mysqli_error($conexao) . "');</script>";
+        }
 
 ?>

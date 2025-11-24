@@ -1,80 +1,94 @@
+body {
+  background: url("../images/img4.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Jersey 10", sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  body {
-    background: url("../images/img4.png") no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .pai {
+/* Container pai centralizado */
+.pai {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 20px;
-
+  min-height: 100vh; /* ocupa toda a tela */
+  padding: 20px;
 }
 
-  .container {
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 20px;
-    width: 350px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-  }
-  
-  /* Logo e título */
-  
+/* Caixa principal */
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px; /* responsivo */
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 
-  
-  h2 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 40px;
-    color: #531f91;
-  }
-  
-  /* Inputs */
-  .form input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 25px;
-    outline: none;
-    font-size: 14px;
-    font-family:"jersey 10", sans-serif;
-  }
-  
-  /* Botão */
-  .form button {
-    width: 106%;
-    padding: 13px;
-    border: none;
-    border-radius: 25px;
-    background: #6c2eb9;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
-    font-family:"jersey 10", sans-serif;
-    font-size: 20px;
-  }
-  
-  .form button:hover {
-    background: #531f91;
-  }
-  
-  /* Link */
-  .login-link {
-    margin-top: 15px;
-    font-size: 14px;
-    color: white;
-  }
-  
-  .login-link a {
-    color: #e6e6e6;
-    text-decoration: underline;
-  }
-  
+/* Título */
+h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #531f91;
+  font-weight: bold;
+}
+
+/* Inputs */
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+}
+
+.form input:focus {
+  background: #fff;
+  box-shadow: 0 0 8px #6c2eb9;
+}
+
+/* Botão */
+.form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  background: #6c2eb9;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form button:hover {
+  background: #531f91;
+  transform: scale(1.05);
+}
+
+/* Link */
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.login-link a {
+  color: #e6e6e6;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.login-link a:hover {
+  color: #fff;
+}
