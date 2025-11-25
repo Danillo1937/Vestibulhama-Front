@@ -12,7 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh; /* ocupa toda a tela */
+  min-height: 100vh;
   padding: 20px;
 }
 
@@ -24,7 +24,7 @@ body {
   padding: 40px;
   border-radius: 20px;
   width: 100%;
-  max-width: 400px; /* responsivo */
+  max-width: 400px;
   backdrop-filter: blur(12px);
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -91,4 +91,47 @@ h2 {
 
 .login-link a:hover {
   color: #fff;
+}
+
+/* ========================= */
+/* Responsividade */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .form input, .form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .form input, .form button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .login-link {
+    font-size: 12px;
+  }
 }

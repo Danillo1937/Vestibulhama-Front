@@ -1,3 +1,4 @@
+<div class="page-wrapper">
 <?php
 $pageTitle = 'Ranking de Simulados';
 include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/includes/head.php');
@@ -5,11 +6,13 @@ echo "<link rel=\"stylesheet\" href=\"/Vestibulhama-Front/ranking/ranking.css\">
 include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/navbar/navbar.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/Vestibulhama-Front/BD/conexao.php');
 
-$query = "SELECT r.nome_usuario, v.nome AS vestibular, r.ano, r.acertos, r.total_questoes, r.data_registro 
-          FROM ranking r
-          JOIN vestibular v ON r.vestibular_id = v.id
-          ORDER BY r.acertos DESC, r.data_registro ASC
-          LIMIT 20";
+$query = "SELECT r.nome_usuario, v.nome AS vestibular, r.ano, MAX(r.acertos) AS acertos, r.total_questoes,
+ MAX(r.data_registro) AS data_registro 
+FROM ranking r
+JOIN vestibular v ON r.vestibular_id = v.id
+GROUP BY r.nome_usuario, r.vestibular_id, r.ano
+ORDER BY acertos DESC, data_registro ASC
+LIMIT 20";
 
 $result = mysqli_query($conexao, $query);
 
@@ -31,8 +34,11 @@ echo "</table>";
 echo "</div>"; /* close table-wrapper */
 echo "</div>"; /* close pai */
 mysqli_close($conexao);
-include_once('../footer/footer.html');
+
+
 ?>
+</div>
+<?php include_once('../footer/footer.html');  ?>
 </body>
 </html>
 

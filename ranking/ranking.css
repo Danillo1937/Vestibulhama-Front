@@ -51,6 +51,25 @@ h2 {
   text-align: center;
 }
 
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Conteúdo principal ocupa o espaço restante */
+.page-wrapper > *:not(footer) {
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  background-color: #2e2e2e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   h2 {
